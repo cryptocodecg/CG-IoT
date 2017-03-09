@@ -15,7 +15,7 @@ void setup() {
     Serial.begin(9600);
     delay(1000);
 
-    WiFiMulti.addAP("MyAccessPoint", "MyPassword");
+    WiFiMulti.addAP("procodecg LG", "12345678");
 
     while(WiFiMulti.run() != WL_CONNECTED) {
         Serial.print(".");
@@ -28,6 +28,10 @@ void setup() {
            }
     }
 
+}
+
+void loop() {
+
     // yayyy we are connected
     Serial.println("");
     Serial.println("WiFi connected");
@@ -35,7 +39,4 @@ void setup() {
     Serial.println(WiFi.localIP());
 
     delay(500);
-}
-
-void loop() {
 }
