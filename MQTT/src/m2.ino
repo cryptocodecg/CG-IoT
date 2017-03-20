@@ -6,11 +6,13 @@
 
 // Update these with values suitable for your network.
 
-const char* ssid = "this-is-your-access-point";
-const char* password = "this-is-your-password";
+//const char* ssid = "this-is-your-access-point";
+//const char* password = "this-is-your-password";
+const char* ssid = "sniffer";
+const char* password = "terbatas";
 //const char* mqtt_server = "broker.mqtt-dashboard.com";
-//const char* mqtt_server = "192.168.1.118";
-const char* mqtt_server = "broker.hivemq.com";
+const char* mqtt_server = "192.168.43.67";
+//const char* mqtt_server = "broker.hivemq.com";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -55,7 +57,9 @@ void callback(char* topic, byte* payload, unsigned int length) {
     digitalWrite(BUILTIN_LED, LOW);   // Turn the LED on (Note that LOW is the voltage level
     // but actually the LED is on; this is because
     // it is acive low on the ESP-01)
+  Serial.println("LOW");
   } else {
+    Serial.println("HIGH");
     digitalWrite(BUILTIN_LED, HIGH);  // Turn the LED off by making the voltage HIGH
   }
 
